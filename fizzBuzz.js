@@ -1,4 +1,4 @@
-// This algorithem says us just one if statement run, if we put first line at the bottom
+// This algorithm says us just one if statement run, if we put first line at the bottom
 // then we got no number which divide by 15!
 
 function fizzBuzz(num) {
