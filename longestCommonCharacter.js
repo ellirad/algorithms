@@ -8,7 +8,6 @@ function commonPrefix(str1, str2) {
     if (str1[i] == str2[j]) result += str1[i];
     else break;
   }
-  console.log(result, 'result');
   return result;
 }
 
@@ -26,26 +25,54 @@ function longestCommonPrefix(array) {
   let mid = Math.floor(array.length / 2);
   let left = longestCommonPrefix(array.slice(0, mid));
   let right = longestCommonPrefix(array.slice(mid));
-  console.log(left, right);
   return commonPrefix(left, right)
 }
-let array = ["geeksforgeeks", "geeks", "geek", "geezer", 'geelack'];
+let array = ["geeksforgeeks", "geeks", "geek", "geezer"];
 console.log(longestCommonPrefix(array), 'test');
 
-// var longestCommonPrefix = function(strs) {
-//     if (strs.length === 0) {
-//         return '';
-//     }
-//     let ans = strs[0];
-//     for (let i = 1; i < strs.length; i++) {
-//         while (strs[i].indexOf(ans) !== 0) {
-//             ans = ans.substring(0, ans.length - 1);
-//             if (ans === '') {
-//                 return '';
-//             }
-//         }
-//     }
-//     return ans;
-// };
 
-// console.log(longestCommonPrefix(['test', 'trest']), 'aolief')
+// word by word algorithm:
+// Javascript Program to find the longest common prefix
+	
+	// A Utility Function to find the common prefix between
+	// strings- str1 and str2
+	function commonPrefixUtil(str1,str2)
+	{
+		let result = "";
+		let n1 = str1.length, n2 = str2.length;
+		// Compare str1 and str2
+		for (let i = 0, j = 0; i <= n1 - 1 && j <= n2 - 1; i++, j++) {
+			if (str1[i] != str2[j]) {
+				break;
+			}
+			result += str1[i];
+		}
+
+		return (result);
+	}
+	
+	// A Function that returns the longest common prefix
+	// from the array of strings
+	function commonPrefix(arr,n)
+	{
+		let prefix = arr[0];
+		
+		for (let i = 1; i <= n - 1; i++) {
+			prefix = commonPrefixUtil(prefix, arr[i]);
+		}
+
+		return (prefix);
+	}
+	
+	// Driver program to test above function
+	let arr=["geeksforgeeks", "geeks",
+			"geek", "geezer"];
+	let n = arr.length;
+	let ans = commonPrefix(arr, n);
+	if (ans.length > 0) {
+		console.log("The longest common prefix is - ",
+				ans);
+	} else {
+		console.log("There is no common prefix ");
+	}
+	
