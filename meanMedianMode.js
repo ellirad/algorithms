@@ -27,7 +27,23 @@ function getMedian(arr) {
   return median;
 }
 
-function getMode(arr) {}
+function getMode(arr) {
+  let modeObj = {};
+
+  arr.forEach(num => {
+    if(!modeObj[num]) modeObj[num] = 0;
+    else modeObj[num]++
+  });
+
+  let max = 0;
+  let modeArr = []
+  for (const key in modeObj) {
+    if(modeObj[key] > max) max = modeObj[key];
+    modeArr = [key];
+  }
+  return modeArr;
+}
 
 console.log(getMean([1, 2, 3, 4, 5]));
 console.log(getMedian([1, 2, 3, 5, 7, 8]));
+console.log(getMode([1, 2, 3, 3, 4, 4, 4]));
