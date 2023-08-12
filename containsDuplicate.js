@@ -15,24 +15,21 @@ var containsDuplicate = function (nums) {
 };
 
 //Ai solution- better performance
-// function containsDuplicate(nums) {
-//   // create an empty set to store the seen elements
-//   let seen = new Set();
-//   // loop through the array
-//   for (let num of nums) {
-//     // if the set already contains the current element, return true
-//     if (seen.has(num)) {
-//       return true;
-//     }
-//     // otherwise, add the current element to the set
-//     else {
-//       seen.add(num);
-//     }
-//   }
-//   // if the loop finishes without returning true, return false
-//   return false;
-// }
+function containsDuplicateWithSet(num) {
+  const _num = new Set();
+  let ans = false;
 
-console.log(containsDuplicate([1, 2, 3, 4]));
-console.log(containsDuplicate([1, 2, 3, 1]));
-console.log(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));
+  num.forEach((element) => {
+    if (_num.has(element)) {
+     ans = true
+    } else {
+      _num.add(element);
+    }
+  });
+
+  return ans
+}
+
+console.log(containsDuplicateWithSet([1, 2, 3, 4]));
+console.log(containsDuplicateWithSet([1, 2, 3, 1]));
+console.log(containsDuplicateWithSet([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));

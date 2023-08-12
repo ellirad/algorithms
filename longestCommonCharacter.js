@@ -25,6 +25,7 @@ function longestCommonPrefix(array) {
   let mid = Math.floor(array.length / 2);
   let left = longestCommonPrefix(array.slice(0, mid));
   let right = longestCommonPrefix(array.slice(mid));
+  console.log(left, right, 'aoiwef');
   return commonPrefix(left, right);
 }
 let array = ["geeksforgeeks", "geeks", "geek", "geezer"];
