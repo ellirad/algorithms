@@ -10,18 +10,14 @@ function binarySearch(numArr, key) {
   const middle = Math.floor(len / 2);
   const middleElement = numArr[middle];
 
-  let left = numArr.splice(0, middle);
-  let right = [...numArr];
-  console.log(left, right, middleElement, middle);
-
   // Base case
   if (key === middleElement) return ans = true;
 
-  if (key < middleElement && numArr.length !== 1) return binarySearch(left, key);
+  if (key < middleElement && numArr.length !== 1) return binarySearch(numArr.splice(0, middle), key);
   
-  if(key > middleElement && numArr.length !== 1) return binarySearch(right, key);
+  if(key > middleElement && numArr.length !== 1) return binarySearch(numArr.splice(middle, len), key);
 
   else return false
 }
 
-console.log(binarySearch([5, 7, 12, 16, 36, 39, 42, 56, 71], 55));
+console.log(binarySearch([5, 7, 12, 16, 36, 39, 42, 56, 71], 56));
