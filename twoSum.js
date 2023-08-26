@@ -4,23 +4,17 @@
  * @return {number[]}
  */
 function twoSum(nums, target) {
-  let x;
-  let result = []
-  let hashTable = [];
+ let map = new Map();
 
-  for (let i = 0; i < nums.length; i++) {
-    x = target - nums[i];
-    let index = nums.indexOf(x);
-    if(index !== -1 ) {
-      hashTable.push(index);
-      let isInHashTable = hashTable.find(index => index === i);
-      if(!isInHashTable) {
-        result.push([i, index]);
-    }
-    }
-    hashTable.push(i)
+ for(let i = 0; i < nums.length; i++) {
+  let diff = target - nums[i];
+  
+  if(map.has(diff)) {
+    return [i, map.get(diff)]
   }
-  return result;
+
+  map.set(nums[i], i)
+ }
 }
 
 
