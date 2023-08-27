@@ -1,18 +1,47 @@
+// function isPalindrome(string) {
+//   string = string.toLowerCase();
+
+//   let characterArr = string.split("");
+//   let validCharacters = "abcdefghijklmnopqrstuvwxyz".split("");
+
+//   let lettersArr = [];
+
+//   characterArr.forEach((char) => {
+//     if (validCharacters.indexOf(char) > -1) lettersArr.push(char);
+//   });
+
+//   if (lettersArr.join("") === lettersArr.reverse().join("")) return true;
+//   else return false;
+// }
+
+// With two pointer
+
 function isPalindrome(string) {
-  string = string.toLowerCase();
+  let strArr = string.toLowerCase().split("");
+  let left = 0;
+  let right = strArr.length - 1;
+  console.log(strArr);
 
-  let characterArr = string.split("");
-  let validCharacters = "abcdefghijklmnopqrstuvwxyz".split("");
+  let validAlphaNumeric = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
 
-  let lettersArr = [];
+  function isValidChar(s) {
+    if (validAlphaNumeric.indexOf(s) > -1) return true;
+    else return false;
+  }
 
-  characterArr.forEach((char) => {
-    if (validCharacters.indexOf(char) > -1) lettersArr.push(char);
-  });
+  while (left < right) {
+    console.log(strArr[left], strArr[right]);
+    if (!isValidChar(strArr[left])) left++;
+    else if (!isValidChar(strArr[right])) right--;
 
-  if (lettersArr.join("") === lettersArr.reverse().join("")) return true;
-  else return false;
+    else if (strArr[left] === strArr[right]) {
+      left++;
+      right--;
+    }
+    else return false;
+  }
+  return true;
 }
 
-
-console.log(isPalindrome("madam i'm adam"))
+// console.log(isPalindrome("madam i'm adam"));
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
