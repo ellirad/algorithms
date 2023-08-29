@@ -33,8 +33,8 @@
 // With two pointer in sorted array. it works only in sorted array.
 // you should move both pointer. right and left
 function twoSum(nums, target) {
-  left = 0;
-  right = nums.length - 1;
+  let left = 0;
+  let right = nums.length - 1;
 
   while (left < right) {
     if (nums[left] + nums[right] === target) return [nums[left], nums[right]];
