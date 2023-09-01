@@ -3,30 +3,61 @@
  * @return {number[]}
  */
 
+// The idea is sorting and two pointer.
 // [-4, -1, -1, 0, 1, 2]
-const threeSum = function (nums) {
-  let sort = nums.sort((a, b) => a - b);
-  let ans = []
+// Function to find all triplets with zero sum
+function findTriplets(nums) {
+// Initialize an empty array to store the result
+    let result = [];
 
-  for(let i = 0; i < sort.length; i++) {
-    let test = []
-    let target = sort[i];
-    let l = i+ 1;
-    let r = sort.length - 1;
+// Sort the array in ascending order
+    nums.sort((a, b) => a - b);
 
-    while(l < r) {
-      if(sort[l] + sort[r] > target) r--
-      else if(sort[l] + sort[r] < target) l++
-      else if(sort[l] + sort[r] === target) return test = [target, sort[l], sort[r]];
+// Loop through the array from left to right
+    for (let i = 0; i < nums.length - 2; i++) {
+// Skip any duplicate elements
+        if (i > 0 && nums[i] === nums[i - 1]) continue;
+
+// Initialize two pointers, one pointing to the next element and one pointing to the last element
+        let left = i + 1;
+        let right = nums.length - 1;
+
+// Move the pointers towards each other until they meet
+        while (left < right) {
+// Calculate the sum of the three elements
+            let sum = nums[i] + nums[left] + nums[right];
+
+// If the sum is zero, add the triplet to the result array
+            if (sum === 0) {
+                result.push([nums[i], nums[left], nums[right]]);
+
+// Move both pointers to skip any duplicate elements
+                while (left < right && nums[left] === nums[left + 1]) left++;
+                while (left < right && nums[right] === nums[right - 1]) right--;
+
+// Move both pointers one step further
+                left++;
+                right--;
+            }
+// If the sum is less than zero, move the left pointer to the right
+            else if (sum < 0) {
+                left++;
+            }
+// If the sum is greater than zero, move the right pointer to the left
+            else {
+                right--;
+            }
+        }
     }
-    console.log(test)
-    ans.push(test)
-  }
-  return ans
-};
 
-console.log(threeSum([-1, 0, 1, 2, -1, -4]));
-// console.log(threeSum([1, 1, -2])); // [[-2,1,1]]
-// console.log(threeSum([-2, 0, 1, 1, 2])); // [[-2,0,2],[-2,1,1]]
-// console.log(threeSum([0, 0, 0, 0]));
-// console.log(threeSum([-2,0,1,1,2]));
+// Return the result array
+    return result;
+}
+
+// Example input
+let nums = [1, -1, 2, 0, -2, 4, -2, -2, 4];
+
+// Example output
+console.log(findTriplets(nums));
+// [[-2, -2, 4], [-2, 0, 2], [-1, 0, 1]]
+
