@@ -38,6 +38,7 @@ function findTriplets(nums) {
 // Move both pointers one step further
                 left++;
                 right--;
+                right--;
             }
 // If the sum is less than zero, move the left pointer to the right
             else if (sum < 0) {
