@@ -3,7 +3,7 @@
  * @return {number[]}
  */
 
-// The idea is sorting and two pointer.
+// The idea is sorting and two   pointer.
 // [-4, -1, -1, 0, 1, 2]
 // Function to find all triplets with zero-sum
 function findTriplets(nums) {
