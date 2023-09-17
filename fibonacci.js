@@ -4,6 +4,13 @@
 // 1.
 
 // position 3: 2 => 1 + 1
+
+/*********************
+ has time complexity of o(2^n)
+ and it is bad, and we can change it to o(n) by dynamic programming.
+
+ anything you do with recursion can be done iteratively(loop)
+ ********************/
 function fibonacci(position) {
   // Base case
   if (position < 3) return 1;
