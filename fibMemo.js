@@ -9,4 +9,4 @@ function fibMemo(index, cache) {
     return cache[index]
 }
 
-console.log(fibMemo(7));
+console.log(fibMemo(50));
