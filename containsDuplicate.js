@@ -4,14 +4,8 @@
  */
 
 var containsDuplicate = function (nums) {
-  let ans = false;
-  nums.sort((a, b) => a - b);
-
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === nums[i + 1]) ans = true;
-  }
-
-  return ans;
+  const s = new Set(nums);
+  return s.size !== nums.length;
 };
 
 //Ai solution- better performance
