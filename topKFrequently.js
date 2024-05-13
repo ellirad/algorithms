@@ -15,6 +15,22 @@ var topKFrequent = function (nums, k) {
   return keys.slice(0, k);
 };
 
-console.log(topKFrequent([1,1,1,2,2,3], 2));
-console.log(topKFrequent([1], 1));
-console.log(topKFrequent([-11,-1,1,-2,2,3], 2));
+function test (nums, k) {
+  let hashTable = {};
+  let ans = [];
+  for(let num of nums) {
+    hashTable[num] = (hashTable[num] || 0) + 1;
+  }
+  // {1: 3, 2: 2, 3: 1}
+
+  Object.entries(hashTable).forEach(([key, value]) => {
+    if(value >= k) ans.push(key);
+  })
+  return ans;
+}
+
+// console.log(topKFrequent([1,1,1,2,2,3], 2));
+// console.log(topKFrequent([1], 1));
+console.log(topKFrequent([-1, -1], 1));
+console.log(topKFrequent([1, 2], 2));
+// console.log(topKFrequent([-11,-1,1,-2,2,3], 2));

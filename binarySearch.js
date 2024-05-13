@@ -11,7 +11,7 @@ function binarySearch(numArr, key) {
   const middleElement = numArr[middle];
 
   // Base case
-  if (key === middleElement) return ans = true;
+  if (key === middleElement) return true;
 
   if (key < middleElement && numArr.length !== 1) return binarySearch(numArr.splice(0, middle), key);
   
