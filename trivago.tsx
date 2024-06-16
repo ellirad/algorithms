@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 const ELLIPSIS = '\u2026'; // Please use this in your solution and NOT '...' (three dots)
 
 interface ChipListProps {
@@ -20,7 +20,7 @@ export const ChipList = ({ chips = [], maxChips, maxTextLength }: ChipListProps)
     const truncLabel = (label: string) => {
         if(label.length <= maxTextLength) return label;
         if(maxTextLength < 1) return '';
-        else return label.slice(0, maxTextLength) + "...";
+        else return label.slice(0, maxTextLength) + ELLIPSIS;
     };
 
     return (
