@@ -25,6 +25,9 @@ const lengthOfLongestSubstring = function (s) {
     return maxLength;
 };
 
-console.log(lengthOfLongestSubstring('abcabcbb'))
-console.log(lengthOfLongestSubstring('bbbbbbb'))
-console.log(lengthOfLongestSubstring('pwwkew'))
+// console.log(lengthOfLongestSubstring('abcabcbb'))
+// console.log(lengthOfLongestSubstring('bbbbbbb'))
+// console.log(lengthOfLongestSubstring('pwwkew'))
+
+let a = [];
+console.log()
