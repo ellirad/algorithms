@@ -3,7 +3,6 @@
  * @return {number[][]}
  */
 
-// [-4, -1, -1, 0, 1, 2]
 const threeSum = function (nums) {
     let result = [];
 
@@ -39,4 +38,4 @@ const threeSum = function (nums) {
     return result;
 };
 
-console.log(threeSum([-1,0,1,2,-1,-4]))
+console.log(threeSum([1, 1, 1, 4, 0, 1, -2, 2, -4]))

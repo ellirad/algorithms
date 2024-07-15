@@ -4,7 +4,6 @@
  */
 const lengthOfLongestSubstring = function (s) {
     let left = 0;
-    let right = 0;
     let maxLength = 0;
     let hashMap = new Set();
 
@@ -19,15 +18,11 @@ const lengthOfLongestSubstring = function (s) {
             }
             left++
         }
-        right++
     }
 
     return maxLength;
 };
 
-// console.log(lengthOfLongestSubstring('abcabcbb'))
+console.log(lengthOfLongestSubstring('abcabcbb'))
 // console.log(lengthOfLongestSubstring('bbbbbbb'))
 // console.log(lengthOfLongestSubstring('pwwkew'))
-
-let a = [];
-console.log()

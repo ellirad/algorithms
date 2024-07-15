@@ -41,11 +41,13 @@ function productExceptSelf(nums) {
   for (let i = 1; i < nums.length; i++) {
     left[i] = nums[i - 1] * left[i - 1];
   }
+  console.log(left, 'left')
 
   for (let i = nums.length - 1; i >= 0; i--) {
     // len = 4, i = 3
     right[i - 1] = right[i] * nums[i];
   }
+  console.log(right, 'right')
 
   for (let i = 0; i < nums.length; i++) {
     ans[i] = right[i] * left[i];
@@ -54,5 +56,5 @@ function productExceptSelf(nums) {
   return ans;
 }
 
-console.log(productExceptSelf([2, 5, 7, 3]));
-console.log(productExceptSelf([11, 9, 2, 1]));
+// console.log(productExceptSelf([1, 2, 3, 4]));
+console.log(productExceptSelf([5, 3, 2, 1]));
