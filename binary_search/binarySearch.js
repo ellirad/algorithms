@@ -1,3 +1,4 @@
+// Recursion algorithm
 // Steps:
 // 1. find the middle of array
 // 2. check if middle of array is grater than key, find the key in second half
