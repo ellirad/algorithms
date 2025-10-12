@@ -27,3 +27,27 @@ const isAnagram = function(s, t) {
 };
 
 console.log(isAnagram('anagram', 'nagaram'));
+
+
+function areCountersEqual(obj1, obj2) {
+    const keys1 = Object.keys(obj1);
+    const keys2 = Object.keys(obj2);
+
+    console.log(keys1, keys2)
+
+    // First check if both have the same number of keys
+    if (keys1.length !== keys2.length) return false;
+
+    // Then check each value
+    for (const key of keys1) {
+        if (obj1[key] !== obj2[key]) return false;
+    }
+
+    return true;
+}
+
+// Example:
+const counter1 = { a: 3, g: 1, m: 1, n: 0, r: 1 };
+const counter2 = { a: 3, g: 1, m: 1, n: 0, r: 1 };
+
+console.log(areCountersEqual(counter1, counter2)); // false
