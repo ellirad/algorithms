@@ -1,14 +1,13 @@
-var reverseList = function(head) {
-	let node = null;
+// [1, 2, 3, 4, 5]
+/*
+temp = 1;
+5,
+1,
+ */
 
-	while (head) {
-		const temp = head.next;
-		head.next = node;
-		node = head;
-		head = temp;
+function reverseLinkList (nums) {
+	for (let i = 0; i < nums.length / 2; i++) {
+		let temp = nums[0];
+
 	}
-
-	return node;
-};
-
-console.log(reverseList([1,2,3,4,5, 6]))
+}
