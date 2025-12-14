@@ -27,3 +27,23 @@ function preorderTraversal(root: TreeNode | null): number[] {
 
     return result
 }
+
+function inorderTraversal(root: TreeNode | null): number[] {
+    const result: number[] = []
+
+    function dfs(node: TreeNode | null) {
+        if (!node) return
+
+        // 1️⃣ left
+        dfs(node.left)
+
+        // 2️⃣ root
+        result.push(node.val)
+
+        // 3️⃣ right
+        dfs(node.right)
+    }
+
+    dfs(root)
+    return result
+}
