@@ -47,3 +47,23 @@ function inorderTraversal(root: TreeNode | null): number[] {
     dfs(root)
     return result
 }
+
+function postorderTraversal(root: TreeNode | null): number[] {
+    const result: number[] = []
+
+    function dfs(node: TreeNode | null) {
+        if (!node) return
+
+        // 1️⃣ left
+        dfs(node.left)
+
+        // 2️⃣ right
+        dfs(node.right)
+
+        // 3️⃣ root
+        result.push(node.val)
+    }
+
+    dfs(root)
+    return result
+}
