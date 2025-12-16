@@ -1,4 +1,4 @@
-class TreeNode {
+export class TreeNode {
 	val: Number
     left: TreeNode | null
     right: TreeNode | null
@@ -10,7 +10,7 @@ class TreeNode {
     }
 }
 
-function preorderTraversal(root: TreeNode | null): number[] {
+export function preorderTraversal(root: TreeNode | null): number[] {
     const result: number[] = []
 
     function dfs(node: TreeNode | null) {
