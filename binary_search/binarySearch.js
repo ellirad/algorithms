@@ -6,6 +6,9 @@
 // 4. if array is less or equal than 1, you have the answer
 // repeat step 1 to 4
 
+// Time complexity: log(n), used for sorted arrays, it is called binary search because it is works like binary tree
+// divide and conqure method.
+
 function binarySearch(numArr, key) {
   const len = numArr.length;
   const middle = Math.floor(len / 2);
