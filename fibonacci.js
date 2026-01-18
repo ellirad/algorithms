@@ -49,3 +49,15 @@ function fibMaster() {
 
 console.log(fibonacci(10))
 console.log('fib calculation is:', calculation)
+
+// There is another approach for dynamic programming called: bottom to up
+
+function fibMaster2(n) {
+  let answers = [0, 1]
+  for (let i = 2; i <= n; i++) {
+    answers.push(answers[i - 2] + answers[i - 1])
+  }
+  return answers.pop()
+}
+
+console.log('fib master2:', fibMaster2(3))
