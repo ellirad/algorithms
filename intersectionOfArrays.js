@@ -24,3 +24,5 @@ var intersection = function(nums1, nums2) {
 
 	return result
 };
+
+console.log(intersection([22, 3, 4, 2, 4, 5], [1, 4]))

@@ -34,3 +34,5 @@ var generateParenthesis = function(n) {
 	backtrack("", 0, 0);
 	return result;
 };
+
+console.log(generateParenthesis(3))
